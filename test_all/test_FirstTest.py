@@ -1,9 +1,8 @@
-import re
-from playwright.sync_api import Playwright, sync_playwright, expect
+from playwright.sync_api import Playwright
 
 # rajesh
 def test_run(playwright: Playwright) -> None:
-    browser = playwright.chromium.launch(headless=False, slow_mo=500)
+    browser = playwright.chromium.launch(headless=False)
     context = browser.new_context()
     page = context.new_page()
     page.set_default_timeout(15000)
@@ -18,7 +17,7 @@ def test_run(playwright: Playwright) -> None:
     page.get_by_role("button", name="Submit").click()
     page.get_by_role("link", name="Log out").click()
     #page.pause()
-    print("shaloo")
+    print("shallow")
     page.set_default_timeout(15000)
 
     # ---------------------
@@ -27,3 +26,5 @@ def test_run(playwright: Playwright) -> None:
 
 
 
+# with sync_playwright() as playwright:
+#     run(playwright)
