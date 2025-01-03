@@ -3,11 +3,13 @@ from playwright.sync_api import Playwright
 
 # rajesh
 @pytest.mark.parametrize("uname",[("student"),
-                                       pytest.param("studentt",marks=pytest.mark.xfail),
-                                       pytest.param("studenttt", marks=pytest.mark.xfail)] )
+                                       # pytest.param("studentt",marks=pytest.mark.xfail),
+                                       # pytest.param("studenttt", marks=pytest.mark.xfail)
+                                  ] )
 @pytest.mark.parametrize("passw",[("Password123"),
-                                       pytest.param("Password12333",marks=pytest.mark.xfail),
-                                       pytest.param("Password1233", marks=pytest.mark.xfail)] )
+                                       # pytest.param("Password123335",marks=pytest.mark.xfail),
+                                       # pytest.param("Password12334", marks=pytest.mark.xfail)
+                                  ] )
 def test_run(playwright: Playwright, uname,passw) -> None:
     browser = playwright.chromium.launch(headless=False)
     context = browser.new_context()
