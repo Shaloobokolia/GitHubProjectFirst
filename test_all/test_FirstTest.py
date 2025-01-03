@@ -1,12 +1,15 @@
 import pytest
 from playwright.sync_api import Playwright
 
+import utils.secret_password
+
+
 # rajesh
 @pytest.mark.parametrize("uname",[("student"),
                                        # pytest.param("studentt",marks=pytest.mark.xfail),
                                        # pytest.param("studenttt", marks=pytest.mark.xfail)
                                   ] )
-@pytest.mark.parametrize("passw",[("Password123"),
+@pytest.mark.parametrize("passw",[(utils.secret_password.PASSWORD),
                                        # pytest.param("Password123335",marks=pytest.mark.xfail),
                                        # pytest.param("Password12334", marks=pytest.mark.xfail)
                                   ] )
