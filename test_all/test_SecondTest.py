@@ -2,6 +2,7 @@ from playwright.sync_api import Playwright
 import pytest
 
 # rajesh
+
 def test_run(playwright: Playwright) -> None:
     browser = playwright.chromium.launch(headless=False)
     context = browser.new_context()
